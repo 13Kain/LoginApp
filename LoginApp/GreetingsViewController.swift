@@ -18,7 +18,7 @@ class GreetingsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         userIDLabel.text = userID
-        
+
         /*let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors  = [
@@ -28,5 +28,4 @@ class GreetingsViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         */
     }
-
 }

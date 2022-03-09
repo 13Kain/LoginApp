@@ -37,8 +37,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed() {
-        if passwordUserField.text != "admin", loginUserField.text != "admin" {
+        if passwordUserField.text != "admin" || loginUserField.text != "admin" {
                 showAlert(title: "Invalid login or password", message: "Please try again")
+                passwordUserField.text = ""
         }
     }
     
