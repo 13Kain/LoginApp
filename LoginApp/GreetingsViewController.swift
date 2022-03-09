@@ -28,7 +28,5 @@ class GreetingsViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         */
     }
-    @IBAction func logOutButtonPressed() {
-        dismiss(animated: true)
-    }
+
 }

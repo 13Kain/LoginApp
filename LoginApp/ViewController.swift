@@ -19,7 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let greetingsVC = segue.destination as? GreetingsViewController else { return }
+        greetingsVC.userID = loginUserField.text
+    }
+    
     @IBAction func forgotLoginButtonPressed() {
         showAlert(title: "Hack me", message: "My login is admin")
     }
@@ -34,9 +39,9 @@ class ViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let greetingsVC = segue.destination as? GreetingsViewController else { return }
-        greetingsVC.userID = loginUserField.text
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        loginUserField.text = ""
+        passwordUserField.text = ""
     }
     
     private func showAlert(title: String, message: String) {
