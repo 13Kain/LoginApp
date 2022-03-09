@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet var passwordUserField: UITextField!
     @IBOutlet var loginUserField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,6 +22,10 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingsVC = segue.destination as? GreetingsViewController else { return }
         greetingsVC.userID = loginUserField.text
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func forgotLoginButtonPressed() {
